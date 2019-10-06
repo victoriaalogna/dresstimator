@@ -7,7 +7,7 @@ This package contains the code to scrape (extract) information from the eBay Dev
 The instructions below summarize how to use the scraper tools to extract item data from the eBay API:
 
 ```
-# Create the virtual envionment
+# Create the virtual environment
 virtualenv venv-scraper
 
 # Enable the virtual environment
@@ -17,12 +17,16 @@ source venv-scraper/bin/activate
 pip3 install -r requirements.txt
 ```
 
+## Configuring the `ebaysdk` Package
+
+This project uses the [Python `ebaysdk`](https://github.com/timotheus/ebaysdk-python) to provide a programmatic interface into the eBay APIs. To use this package, and the eBay API, you must have an eBay Developer account, and an API key. The API key information needs to be added to the `ebay.yaml` file for both the Finding API (`svcs.ebay.com`) and the Shopping API (`open.api.ebay.com`). This package includes the default file from the Python `ebaysdk` for convenience.
+
 ## Summary of Programs
 
-There are a selection of scripts required to extract data effectively and efficiently from the eBay API:
+There is a selection of scripts required to extract data effectively and efficiently from the eBay API:
 
-- `scraper_find_complete_items.py`: This script queries the eBay Finding API for all auctions that have officially been _completed_ using the `findCompletedItems()` API endpoint. Since this query does not fetch all item details, only the eBay `ItemID` number is saved for another future query. This query can extract 100 items at a time, resulting in minimising API calls. The item ID numbers are saved to the `extracted_items.json` file.
-- `scraper_get_item_details.py`: This script uses the extracted item ID numbers and performs a full item lookup using the `GetMultipleItems()` API endpoint. This query returns the full auction details as well as the `ItemSpecifics` and `TextDescription`. This query can extract 20 items at a time. For each item, the JSON is exported to the `extracted_items` folder. If an item has been extracted in a past data dump, it is not processed again.
+- `scraper_find_complete_items.py`: This script queries the eBay Finding API for all auctions that have officially been _completed_ using the `findCompletedItems()` API endpoint. Since this query does not fetch all item details, only the eBay `ItemID` number is saved for another future query. This query can extract 100 items at a time, resulting in minimizing API calls. The item ID numbers are saved to the `extracted_items.json` file.
+- `scraper_get_item_details.py`: This script uses the extracted item ID numbers and performs a full item lookup using the eBay Shopping API endpoint named `GetMultipleItems()`. This query returns the full auction details as well as the `ItemSpecifics` and `TextDescription`. This query can extract 20 items at a time. For each item, the JSON is exported to the `extracted_items` folder. If an item has been extracted in a past data dump, it is not processed again.
 - `scraper_clean_data.py`: This script cleans the data, flattens the nested JSON structure and extracts the `ItemSpecifics` and puts them is a new JSON property. All cleaned item JSON files are saved in the `extracted_items_clean` folder.
 - `scraper_combine_JSON.py`: This script combines all extracted and cleaned items into a single JSON file (`all_json_data.json`) for testing.
 
