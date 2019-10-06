@@ -1,0 +1,401 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description":"A representation of an eBay auction item.",
+    "title": "Item",
+    "type": "object",
+    "properties": {
+        "AutoPay": {
+            "type": "boolean",
+            "description": "If the seller requires immediate payment."
+        },
+        "AvailableForPickupDropOff": {
+            "type": "boolean",
+            "description": "Pickup an item from an eBay collection center."
+        },
+        "BestOfferEnabled": {
+            "type": "boolean",
+            "description": "If the seller accepts the best offer."
+        },
+        "BidCount": {
+            "type": "integer",
+            "description": "The number of bids placed on the auction."
+        },
+        "BuyItNowAvailable": {
+            "type": "boolean",
+            "description": "If Buy It Now is available on the auction."
+        },
+        "BuyItNowPrice_value": {
+            "type": "number",
+            "description": "The Buy It Now price (only present if BuyItNowAvailable)."
+        },
+        "BuyItNowPrice_currencyID": {
+            "type": "string",
+            "description": "The Buy It Now currency ID (only present if BuyItNowAvailable)."
+        },
+        "Charity_CharityID": {
+            "type": "string",
+            "description": "A number to identify an associated chartiy."
+        },
+        "Charity_CharityName": {
+            "type": "string",
+            "description": "The name of the charity."
+        },
+        "Charity_CharityNumber": {
+            "type": "integer",
+            "description": "The GUID of the charity."
+        },
+        "Charity_DonationPercent": {
+            "type": "integer",
+            "description": "The percentage of purchase price towards charity."
+        },
+        "Charity_LogoURL": {
+            "type": "string",
+            "description": "The full URL to the charity logo."
+        },
+        "Charity_Mission": {
+            "type": "string",
+            "description": "The stated mission point of the chartiy."
+        },
+        "Charity_Status": {
+            "type": "string",
+            "description": "The status of the chartiy."
+        },
+        "ConditionDescription": {
+            "type": "string",
+            "description": "A description of the item condition."
+        },
+        "ConditionDisplayName": {
+            "type": "string",
+            "description": "User-friendly name for the item condition."
+        },
+        "ConditionID": {
+            "type": "integer",
+            "description": "Numeric identifier that represents the condition of the item."
+        },
+        "ConvertedBuyItNowPrice_value": {
+            "type": "number",
+            "description": "The Buy It Now price (only present if BuyItNowAvailable)."
+        },
+        "ConvertedBuyItNowPrice_currencyID": {
+            "type": "string",
+            "description": "The Buy It Now currency ID (only present if BuyItNowAvailable)."
+        },
+        "ConvertedCurrentPrice_value": {
+            "type": "number",
+            "description": "The current, converted auction price."
+        },
+        "ConvertedCurrentPrice_currencyID": {
+            "type": "string",
+            "description": "The current, converted auction proce currency ID."
+        },
+        "Country": {
+            "type": "string",
+            "description": "Two letter country code of where the item is from."
+        },
+        "CurrentPrice_value": {
+            "type": "number",
+            "description": "The current auction price."
+        },
+        "CurrentPrice_currencyID": {
+            "type": "string",
+            "description": "The current auction price currency ID."
+        },
+        "Description": {
+            "type": "string",
+            "description": "The seller's description of the listing."
+        },
+        "EligibleForPickupDropOff": {
+            "type": "boolean",
+            "description": "If the item can be picked up or dropped off."
+        },
+        "EndTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time (in ISO8601) that the auction ends."
+        },
+        "ExcludeShipToLocation": {
+            "type": "array",
+            "description": "Countries the seller will not ship to."
+        },
+        "GalleryURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "A URL link to a thumbnail of the gallery image."
+        },
+        "GlobalShipping": {
+            "type": "boolean",
+            "description": "If the seller ships the item globally."
+        },
+        "HandlingTime": {
+            "type": "integer",
+            "description": "The maximum number of days an item takes to ship."
+        },
+        "HighBidder_UserID": {
+            "type": "string",
+            "description": "The unique ID of the highest bidder."
+        },
+        "HighBidder_FeedbackPrivate": {
+            "type": "boolean",
+            "description": "If the highest bidder has feedback history set to private."
+        },
+        "HighBidder_FeedbackRatingStar": {
+            "type": "string",
+            "description": "A color representing the highest bidders feedback star image."
+        },
+        "HighBidder_FeedbackScore": {
+            "type": "integer",
+            "description": "The aggregate feedback score for the highest bidder."
+        },
+        "HighBidder_UserAnonymized": {
+            "type": "boolean",
+            "description": "If eBay has annonymized the highest bidder information."
+        },
+        "HitCount": {
+            "type": "integer",
+            "description": "The number of times the item auction page has be visited."
+        },
+        "IntegratedMerchantCreditCardEnabled": {
+            "type": "boolean",
+            "description": "If the seller can accept common credit cards as payment."
+        },
+        "ItemID": {
+            "type": "string",
+            "description": "The unique identifier of the eBay listing."
+        },
+        "ItemSpecifics": {
+            "type": "object",
+            "description": "An object of seller-specified properties."
+        },
+        "ListingStatus": {
+            "type": "string",
+            "description": "The status of the item auction."
+        },
+        "ListingType": {
+            "type": "string",
+            "description": "The type of auction that is being run for the item."
+        },
+        "Location": {
+            "type": "string",
+            "description": "The physical location of the item."
+        },
+        "LotSize": {
+            "type": "integer",
+            "description": "The number of items being sold in the auction."
+        },
+        "MinimumToBid_value": {
+            "type": "number",
+            "description": "The minimum bid price on the item auction."
+        },
+        "MinimumToBid_currencyID": {
+            "type": "string",
+            "description": "The currency ID of the minimum bid price on the item auction."
+        },
+        "PaymentAllowedSite": {
+            "type": "string",
+            "description": "The locations which payments can be accepted from."
+        },
+        "PaymentMethods": {
+            "type": "array",
+            "description": "The locations which payments can be accepted from."
+        },
+        "PictureURL": {
+            "type": "array",
+            "description": "An array (list) of URLs of item gallery images."
+        },
+        "PostalCode": {
+            "type": "string",
+            "description": "The postal code (zip code) of the item's physical location."
+        },
+        "PrimaryCategoryID": {
+            "type": "string",
+            "description": "The unique identifier of the eBay listing's primay category."
+        },
+        "PrimaryCategoryIDPath": {
+            "type": "string",
+            "description": "The full path to the primary listing category."
+        },
+        "PrimaryCategoryName": {
+            "type": "string",
+            "description": "The full name of the primary listing category."
+        },
+        "Quantity": {
+            "type": "integer",
+            "description": "The quantity of the item available for purchase."
+        },
+        "QuantityAvailableHint": {
+            "type": "string",
+            "description": "The quantity of the item available for purchase (hinted)."
+        },
+        "QuantitySold": {
+            "type": "integer",
+            "description": "The number of items sold."
+        },
+        "QuantitySoldByPickupInStore": {
+            "type": "integer",
+            "description": "The number of item sold through the In-Store Pickup option."
+        },
+        "QuantityThreshold": {
+            "type": "integer",
+            "description": "The threshold for the quanity available hinted."
+        },
+        "ReserveMet": {
+            "type": "boolean",
+            "description": "If the auction reserve has been met."
+        },
+        "ReturnPolicy_Description": {
+            "type": "string",
+            "description": "Sellers description of their return policy."
+        },
+        "ReturnPolicy_InternationalRefund": {
+            "type": "string",
+            "description": "Sellers description if compensates international buyers for remorse returns."
+        },
+        "ReturnPolicy_InternationalReturnsAccepted": {
+            "type": "string",
+            "description": "The sellers return policy (even if not shipping internationally)."
+        },
+        "ReturnPolicy_InternationalReturnsWithin": {
+            "type": "string",
+            "description": "The number of days a buyer can return the item in."
+        },
+        "ReturnPolicy_InternationalShippingCostPaidBy": {
+            "type": "string",
+            "description": "Indicates if buyer or seller pays the shipping cost."
+        },
+        "ReturnPolicy_Refund": {
+            "type": "string",
+            "description": "Sellers description if compensates domestic buyers for remorse returns."
+        },
+        "ReturnPolicy_ReturnsAccepted": {
+            "type": "string",
+            "description": "The sellers return policy."
+        },
+        "ReturnPolicy_ReturnsWithin": {
+            "type": "string",
+            "description": "The number of days a buyer can return the item in."
+        },
+        "ReturnPolicy_ShippingCostPaidBy": {
+            "type": "string",
+            "description": "Indicates if buyer or seller pays the shipping cost."
+        },
+        "SecondaryCategoryID": {
+            "type": "string",
+            "description": "The unique identifier of the eBay listing's secondary category."
+        },
+        "SecondaryCategoryIDPath": {
+            "type": "string",
+            "description": "The full path to the secondary listing category."
+        },
+        "SecondaryCategoryName": {
+            "type": "string",
+            "description": "The full name to the secondary listing category."
+        },
+        "Seller_FeedbackRatingStar": {
+            "type": "string",
+            "description": "A color representing the highest bidders feedback star image."
+        },
+        "Seller_FeedbackScore": {
+            "type": "integer",
+            "description": "The aggregated feedback score for the seller."
+        },
+        "Seller_PositiveFeedbackPercent": {
+            "type": "number",
+            "description": "The percentage value of a sellers feedback."
+        },
+        "Seller_TopRatedSeller": {
+            "type": "boolean",
+            "description": "If the seller has Top-Rated Seller status"
+        },
+        "Seller_UserID": {
+            "type": "string",
+            "description": "The unique identifier of the eBay seller."
+        },
+        "ShipToLocations": {
+            "type": "string",
+            "description": "Comma-separated string of shipping locations."
+        },
+        "Site": {
+            "type": "string",
+            "description": "The eBay marketplace on which the item was originally listed."
+        },
+        "StartTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "The time (in ISO8601) that the auction started."
+        },
+        "Storefront_StoreName": {
+            "type": "string",
+            "description": "The name of the sellers eBay store."
+        },
+        "Storefront_StoreURL": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL of the sellers eBay store."
+        },
+        "Subtitle": {
+            "type": "string",
+            "description": "The subtitle of the listing."
+        },
+        "TimeLeft": {
+            "type": "string",
+            "description": "The time left (in ISO8601) before the listing is scheduled to end."
+        },
+        "Title": {
+            "type": "string",
+            "description": "The listing title."
+        },
+        "ViewItemURLForNaturalSearch": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL to the listing's View Item page on the eBay marketplace."
+        },
+        "ItemDetails_Designer_Brand": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Size_Type": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Silhouette": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Size_Womens": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Style": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Detailing": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Sleeve_Style": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Dress_Length": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Color": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Material": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Neckline": {
+            "type": "string",
+            "description": ""
+        },
+        "ItemDetails_Back_Closure": {
+            "type": "string",
+            "description": ""
+        }
+    }
+}
