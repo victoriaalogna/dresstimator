@@ -1,3 +1,11 @@
+# VK Additions:
+# scraper: do not include venv or data
+scraper/venv-scraper/*
+scraper/all_json_data.json
+scraper/extracted_items.json
+scraper/extracted_items/*
+scraper/extracted_items_clean/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
