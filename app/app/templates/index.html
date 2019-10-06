@@ -1,0 +1,109 @@
+
+
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="static/css/normalize.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/foundation.min.css">
+    <meta name="theme-color" content="#fafafa">
+  </head>
+  <body>
+    <div class="callout large primary">
+      <div class="row column text-center">
+        <h1>Dresstimator</h1>
+        <h2 class="subheader">Wedding Dress Price Recommender</h2>
+      </div>
+    </div>
+    <form class="dress-properties-selection" method="POST" action="/submitted">
+      <div class="row medium-8 large-7 columns">
+        <!-- Designer selector -->
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Designer</label>
+          </div>
+          <div class="small-9 columns">
+            <select id="select-designer" name="select-designer">
+            {% for option in select_designer_options %}
+            <option {% if option.Selected %}selected="selected"{% endif %} value={{ option.value }}>{{ option.value }} </option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+        <!-- Silhouette selector -->
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Silhouette</label>
+          </div>
+          <div class="small-9 columns">
+            <select id="select-silhouette" name="select-silhouette">
+            {% for option in select_silhouette_options %}
+            <option {% if option.Selected %}selected="selected"{% endif %} value={{ option.value }}>{{ option.value }} </option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+        <!-- Color selector -->
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Color</label>
+          </div>
+          <div class="small-9 columns">
+            <select id="select-color" name="select-color">
+            {% for option in select_color_options %}
+            <option {% if option.Selected %}selected="selected"{% endif %} value={{ option.value }}>{{ option.value }} </option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+        <!-- Sell in Days selector -->
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Sell in (days)</label>
+          </div>
+          <div class="small-9 columns">
+            <select id="select-days" name="select-days">
+            {% for option in select_days_options %}
+            <option {% if option.Selected %}selected="selected"{% endif %} value={{ option.value }}>{{ option.value }} </option>
+            {% endfor %}
+            </select>
+          </div>
+        </div>
+        <!-- Description -->
+        <div class="row">
+          <div class="small-3 columns">
+            <label for="middle-label" class="middle">Description</label>
+          </div>
+          <div class="small-9 columns">
+            <input type="text" id="text-description" name="text-description" placeholder="Enter product description">
+          </div>
+        </div>
+        <input class="button large expanded" type="submit" value="Dresstimate Price">
+      </div>
+      {% if dresstimated_price %}
+      <div class="row medium-8 large-7 columns">
+        <div class="small-12 columnsi text-center">
+          <h2>Price: {{ dresstimated_price }}</h2>
+        </div>
+      </div>
+      {% endif %}
+    </form>
+    <script src="static/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+    <script src="static/js/vendor/foundation.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/main.js"></script>
+  </body>
+</html>
+
