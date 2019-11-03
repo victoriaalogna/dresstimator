@@ -25,6 +25,7 @@ along with Dresstimator.  If not, see <https://www.gnu.org/licenses/>.
 """
 
 import re
+import json
 import pickle
 import collections
 
@@ -46,18 +47,20 @@ client = MongoClient('mongodb://NOTTHEACTUALUSER:NOTTHEACTUALPASSWORD@localhost:
 db = client['dresstimator']
 collection = db['items']
 
-######### Load the ML model
-with open('../model/trained_model.pkl', 'rb') as f:
-    gbm = pickle.load(f)
+# Load all database items into a dictionary
+print(">>> Reading in data...")
+with open('app/all_json_data.json') as f:
+    db_data = json.load(f)
+
 
 ######### Set the web app menus based on database contents
 def generate_menu_dicts(values_list):
     temp_list = list()
     for i, value in enumerate(values_list):
         if i == 0:
-            temp_dict = {"value": value, "Selected": True}
+            temp_dict = {"value": str(value), "Selected": True}
         else:
-            temp_dict = {"value": value, "Selected": False}
+            temp_dict = {"value": str(value), "Selected": False}
         temp_list.append(temp_dict)
     return temp_list
 
@@ -128,7 +131,7 @@ def submitted():
     description = request.form.get('text-description')
 
     # Put user input into a dictionary
-    data_dict = {
+    user_data = {
         "designer": designer,
         "silhouette": silhouette,
         "color": color,
@@ -137,9 +140,9 @@ def submitted():
     }
 
     print(">>> Fetched the following user input from web app:")
-    print(data_dict)
+    print(user_data)
 
-    dresstimated_price = run_model(data_dict, gbm)
+    dresstimated_price = run_model(db_data, user_data)
 
     # Finally, set the price for the dress to display on the web app
     dresstimated_price = "{:.2f}".format(dresstimated_price)
