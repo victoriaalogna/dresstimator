@@ -4,4 +4,4 @@ ebaysdk==2.1.5
 idna==2.8
 lxml==4.4.1
 requests==2.22.0
-urllib3==1.25.5
+urllib3==1.26.5
